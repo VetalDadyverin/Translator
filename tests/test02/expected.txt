@@ -1,0 +1,48 @@
+ Lexems_table
+      Line     Column     Number       Name 
+         1          1        401    PROGRAM 
+         1          9       1001    another 
+         1         17         59          ; 
+         2          1        404      CONST 
+         4          1        402      BEGIN 
+         4          7        403        END 
+         5          2         46          . 
+
+ Const_table
+|      Name|    Number|
+
+ Iden_table
+|      Name|    Number|
+|   another|      1001|
+
+|-------------------------------|
+|Program has no syntax mistackes|
+|-------------------------------|
+-<signal-program>
+---<program>
+-----PROGRAM                         code = 401
+-----<procedure-identifier>
+-------<identifier>
+---------another                         code = 1001
+-----;                         code = 59
+-----<block>
+-------<declarations>
+---------<const-declarations>
+-----------CONST                         code = 404
+-----------<constant-declaration-list>
+-------------<empty>
+-------BEGIN                         code = 402
+-------<statements-list>
+---------<empty>
+-------END                         code = 403
+-----.                         code = 46
+
+DATA SEGMENT
+DATA ENDS
+CODE SEGMENT
+  ASSUME CS:CODE, DS:DATA
+  another:
+  MOV AH, 4Ch
+  INT 21h
+CODE ENDS
+END another

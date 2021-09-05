@@ -1,0 +1,115 @@
+ Lexems_table
+      Line     Column     Number       Name 
+         1          1        401    PROGRAM 
+         1          9       1001       name 
+         1         14         59          ; 
+         2          1        404      CONST 
+         3          1       1002       smth 
+         3          6         61          = 
+         3          8         39          ' 
+         3         10        501         16 
+         3         12         44          , 
+         3         13        502         19 
+         3         15         39          ' 
+         3         16         59          ; 
+         4          1       1003      equil 
+         4          7         61          = 
+         4          9         39          ' 
+         4         11         39          ' 
+         4         12         59          ; 
+         5          1       1003      equil 
+         5          7         61          = 
+         5          9         39          ' 
+         5         11         39          ' 
+         5         12         59          ; 
+         6          1        402      BEGIN 
+         7          1        403        END 
+         8          2         46          . 
+
+ Const_table
+|      Name|    Number|
+|        16|       501|
+|        19|       502|
+
+ Iden_table
+|      Name|    Number|
+|     equil|      1003|
+|      name|      1001|
+|      smth|      1002|
+
+|-------------------------------|
+|Program has no syntax mistackes|
+|-------------------------------|
+-<signal-program>
+---<program>
+-----PROGRAM                         code = 401
+-----<procedure-identifier>
+-------<identifier>
+---------name                         code = 1001
+-----;                         code = 59
+-----<block>
+-------<declarations>
+---------<const-declarations>
+-----------CONST                         code = 404
+-----------<constant-declaration-list>
+-------------<constant-declaration>
+---------------<constant-identifier>
+-----------------<identifier>
+-------------------smth                         code = 1002
+---------------=                         code = 61
+---------------<constant>
+-----------------'                         code = 39
+-----------------<complex-number>
+-------------------<left-part>
+---------------------<unsighned-integer>
+-----------------------16                         code = 501
+-------------------<right-part>
+---------------------,                         code = 44
+---------------------<unsighned-integer>
+-----------------------19                         code = 502
+-----------------'                         code = 39
+---------------;                         code = 59
+-------------<constant-declaration-list>
+---------------<constant-declaration>
+-----------------<constant-identifier>
+-------------------<identifier>
+---------------------equil                         code = 1003
+-----------------=                         code = 61
+-----------------<constant>
+-------------------'                         code = 39
+-------------------<complex-number>
+---------------------<left-part>
+-----------------------<empty>
+---------------------<right-part>
+-----------------------<empty>
+-------------------'                         code = 39
+-----------------;                         code = 59
+---------------<constant-declaration-list>
+-----------------<constant-declaration>
+-------------------<constant-identifier>
+---------------------<identifier>
+-----------------------equil                         code = 1003
+-------------------=                         code = 61
+-------------------<constant>
+---------------------'                         code = 39
+---------------------<complex-number>
+-----------------------<left-part>
+-------------------------<empty>
+-----------------------<right-part>
+-------------------------<empty>
+---------------------'                         code = 39
+-------------------;                         code = 59
+-----------------<constant-declaration-list>
+-------------------<empty>
+-------BEGIN                         code = 402
+-------<statements-list>
+---------<empty>
+-------END                         code = 403
+-----.                         code = 46
+
+DATA SEGMENT
+  smth DD 15.819274, 2.398035
+  equil DD 0.000000, 0.000000
+
+  Error: second time lexem with the name equil, in line = 5 and column = 1
+ 
